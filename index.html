@@ -178,10 +178,12 @@ footer.foot a{color:var(--muted)}
 </div>
 
 <script>
-// Web3Forms public submission key (same as vukaonline.co.za). Safe in client-side HTML.
-// Submissions are emailed to the address set on the Web3Forms account (clayton@vukaonline.co.za).
-// Note: `ccemail` is a Web3Forms Pro feature. On the free plan, including it makes every submission fail (HTTP 400).
-const WEB3FORMS_KEY = "0bc7f5c1-8ff9-464c-9b2a-47b605f31caa";
+// Web3Forms public submission keys. Safe in client-side HTML. Each key's recipient is set in the Web3Forms dashboard.
+// Each brief is sent once per key, because `ccemail` is Pro-only and makes free-plan submissions fail (HTTP 400).
+const WEB3FORMS_KEYS = [
+  "0bc7f5c1-8ff9-464c-9b2a-47b605f31caa", // Vuka: clayton@vukaonline.co.za (same key as vukaonline.co.za)
+  "8b3a7458-93ad-439c-9b02-6c82251fbb30", // TseboNexus: thabo.lebina@tsebonexus.co.za
+];
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
 const SECTIONS = [
@@ -357,7 +359,6 @@ $("#sendBtn").addEventListener("click", async () => {
   const btn = $("#sendBtn"); btn.disabled = true; btn.textContent = "Sending…"; setStatus("", "");
   // Labelled fields so the email reads cleanly, in form order
   const payload = {
-    access_key: WEB3FORMS_KEY,
     subject: `New discovery brief: ${v.businessName}`,
     from_name: "Vuka × TseboNexus Discovery",
     botcheck: false,
@@ -370,9 +371,14 @@ $("#sendBtn").addEventListener("click", async () => {
   payload["Consent"] = "Agreed to Vuka Online and TseboNexus using this information for a prototype and proposal";
   payload["Full brief (plain text)"] = asText(v);
   try{
-    const res = await fetch(WEB3FORMS_ENDPOINT, { method:"POST", headers:{"Content-Type":"application/json", Accept:"application/json"}, body: JSON.stringify(payload) });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok || data.success === false) throw new Error(data.message || "Submission rejected");
+    // Send to every recipient; the brief counts as delivered if at least one copy got through
+    const results = await Promise.allSettled(WEB3FORMS_KEYS.map(async key => {
+      const res = await fetch(WEB3FORMS_ENDPOINT, { method:"POST", headers:{"Content-Type":"application/json", Accept:"application/json"}, body: JSON.stringify({access_key: key, ...payload}) });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === false) throw new Error(data.message || "Submission rejected");
+    }));
+    results.forEach((r, i) => { if (r.status === "rejected") console.warn("Web3Forms copy", i + 1, "failed:", r.reason?.message); });
+    if (!results.some(r => r.status === "fulfilled")) throw new Error("No copy was delivered");
     try{ localStorage.removeItem(DRAFT); }catch(e){}
     $("#doneName").textContent = v.contactName.split(" ")[0] || "we've got it";
     $("#formView").hidden = true; $("#headline").hidden = true; $("#lede").hidden = true;

@@ -7,7 +7,7 @@ Client intake form for leads from the TseboNexus partnership. A lead fills it in
 | Live URL | <https://discovery.tsebo-nexus.co.za> |
 | Hosting | GitHub Pages (static HTML, no build step) |
 | DNS | GoDaddy (tsebo-nexus.co.za): `CNAME discovery → 0824622148.github.io` |
-| Submissions | Web3Forms (same key as vukaonline.co.za), emailed to clayton@vukaonline.co.za |
+| Submissions | Web3Forms, sent once per key in `WEB3FORMS_KEYS`: clayton@vukaonline.co.za (main-site key) and thabo.lebina@tsebonexus.co.za (second key) |
 
 Web3Forms is on the free plan: `ccemail` (copying a second address) is Pro-only and makes submissions fail with HTTP 400 if included.
 
