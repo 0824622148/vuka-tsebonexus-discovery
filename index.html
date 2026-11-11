@@ -211,21 +211,27 @@ const SECTIONS = [
     {id:"payments", label:"How should customers pay?", type:"chips", half:true, showIf:["solutions","Online store","Booking / appointments","Quotes & invoicing"], opts:["Card online (PayFast, Yoco, Ozow…)","EFT","Cash on delivery / collection","SnapScan / Zapper"]},
     {id:"delivery", label:"Delivery / collection", type:"chips", showIf:["solutions","Online store"], opts:["Courier nationwide","Own local delivery","Collection only","Digital products / services"]},
   ]},
-  {id:"look", k:"04 · Look & content", title:"Brand and content", hint:"What we can work with for the prototype.", fields:[
+  {id:"inspo", k:"04 · Inspiration", title:"What inspires you", hint:"Share sites and apps you enjoy using, from any industry. These show us what “good” looks like to you.", fields:[
+    {id:"inspoSites", label:"Websites you like", type:"textarea", ph:"Paste links and add a line on what you like about each, e.g. “takealot.com: easy to find things and check out”"},
+    {id:"inspoApps", label:"Apps or portals you enjoy using", type:"textarea", ph:"e.g. your banking app, Checkers Sixty60, Uber, Booksy, a supplier's order portal…", rows:2},
+    {id:"inspoWhy", label:"What do they get right?", type:"chips", opts:["Clean & simple","Bold & colourful","Great photos","Easy to navigate","Quick checkout","Fast booking","Customer logins / accounts","Order tracking","WhatsApp / live chat","Works well on phone"]},
+    {id:"competitors", label:"Competitors we should look at", type:"text", ph:"Names or links. Optional"},
+    {id:"avoid", label:"Anything you don't want?", type:"text", ph:"e.g. pop-ups, dark backgrounds, too much text"},
+  ]},
+  {id:"look", k:"05 · Look & content", title:"Brand and content", hint:"What we can work with for the prototype.", fields:[
     {id:"logo", label:"Do you have a logo?", type:"radio", half:true, opts:["Yes","Rough version","No"]},
     {id:"photos", label:"Photos of your work / products?", type:"radio", half:true, opts:["Yes, good ones","Some, phone quality","None yet"]},
     {id:"copy", label:"Who writes the website text?", type:"radio", half:true, opts:["We'll provide it","Help us write it"]},
     {id:"domain", label:"Do you own a domain (e.g. yourbusiness.co.za)?", type:"radio", half:true, opts:["Yes","No","Not sure"]},
     {id:"feel", label:"Three words for how the brand should feel", type:"text", ph:"e.g. trustworthy, modern, local"},
-    {id:"likes", label:"Sites or competitors you like (and why)", type:"textarea", ph:"Links plus a line on what you like about each.", rows:2},
   ]},
-  {id:"secure", k:"05 · Security baseline", tsebo:true, title:"Data and security", hint:"TseboNexus uses this to keep your new setup safe from day one.", fields:[
+  {id:"secure", k:"06 · Security baseline", tsebo:true, title:"Data and security", hint:"TseboNexus uses this to keep your new setup safe from day one.", fields:[
     {id:"personalData", label:"What customer information do you keep?", type:"chips", opts:["Names & phone numbers","Email addresses","ID numbers","Addresses","Medical / sensitive info","Banking details","None"]},
     {id:"popia", label:"Are you familiar with your POPIA responsibilities?", type:"radio", half:true, opts:["Yes, we're compliant","Somewhat","No"]},
     {id:"backups", label:"Is business data backed up?", type:"radio", half:true, opts:["Yes, regularly","Sometimes","No / not sure"]},
     {id:"incident", label:"Any past issues?", type:"chips", opts:["Hacked social / email account","Scam or fraud attempt","Lost data","Virus / ransomware","None that we know of"]},
   ]},
-  {id:"practical", k:"06 · Practicalities", title:"Budget and timing", hint:"Ranges are fine. This helps us scope something realistic.", fields:[
+  {id:"practical", k:"07 · Practicalities", title:"Budget and timing", hint:"Ranges are fine. This helps us scope something realistic.", fields:[
     {id:"budget", label:"Once-off build budget", type:"radio", opts:["Under R5,000","R5,000 – R15,000","R15,000 – R35,000","R35,000 – R75,000","R75,000+","Not sure yet"]},
     {id:"monthly", label:"Monthly budget for hosting, support & security", type:"radio", opts:["Under R500","R500 – R1,500","R1,500 – R3,000","R3,000+","Not sure yet"]},
     {id:"timeline", label:"When do you need it live?", type:"radio", half:true, opts:["ASAP (under 2 weeks)","Within a month","1–3 months","Flexible"]},
