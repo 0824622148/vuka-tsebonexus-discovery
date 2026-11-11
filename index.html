@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vuka × TseboNexus Discovery Brief</title>
+<meta name="description" content="Tell Vuka Online and TseboNexus about your business so we can prepare a prototype and proposal.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f241d">
+<link rel="icon" href="assets/vuka-ink.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a single form column with a sticky section rail on wide screens; chips do most of the work so the brief fills fast. */
+/* Brand: Vuka deep green + green dot; TseboNexus teal (#3FC1AE) for the security section. No red tones (TseboNexus brand rule). */
+:root{
+  color-scheme:light;
+  --bg:#f4f7f5; --surface:#ffffff; --ink:#0f241d; --muted:#556860; --line:#dbe4df;
+  --accent:#16784d; --accent-ink:#ffffff; --teal:#1d8f80; --teal-chip:#3FC1AE; --teal-soft:#e4f7f4; --chip:#eaf1ed; --warn:#9a5b00; --ok:#16784d;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0a1a15; --surface:#10251e; --ink:#e8f2ed; --muted:#9db3a9; --line:#22392f;
+  --accent:#31D98C; --accent-ink:#0C231C; --teal:#6FE3D3; --teal-chip:#3FC1AE; --teal-soft:#0f2f33; --chip:#1a3229; --warn:#f0b35a; --ok:#31D98C; color-scheme:dark}
+}
+.lockup img.logo-dark{display:none}
+@media (prefers-color-scheme: dark){.lockup img.logo-light{display:none} .lockup img.logo-dark{display:block}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 24px}
+[hidden]{display:none!important}
+img{max-width:100%}
+.wrap{max-width:1040px;margin:0 auto}
+header.top{padding-block:40px 28px;display:grid;gap:14px;max-width:680px}
+.lockup{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-bottom:6px}
+.lockup img{height:40px;width:auto;display:block}
+.lockup img.ts{height:34px}
+.lockup .x{font:500 20px/1 var(--f-body);color:var(--muted)}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 clamp(30px,5vw,46px)/1.05 var(--f-display);letter-spacing:-.02em;margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:0;max-width:62ch}
+.layout{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;align-items:start}
+nav.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);display:grid;gap:2px}
+nav.rail a{display:flex;justify-content:space-between;gap:8px;padding:7px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:14px;transition:background .2s ease-in-out}
+nav.rail a:hover{background:var(--chip);color:var(--ink)}
+nav.rail a .n{font:500 11px/1.9 var(--f-mono);font-variant-numeric:tabular-nums}
+nav.rail a.done .n{color:var(--accent)}
+.rail-total{margin-top:12px;padding:10px;border-top:1px solid var(--line);font:500 12px/1.4 var(--f-mono);color:var(--muted)}
+.bar{height:4px;background:var(--line);border-radius:4px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s ease-in-out}
+.main{display:grid;gap:20px;min-width:0}
+form{display:grid;gap:20px;min-width:0}
+section.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:18px;scroll-margin-top:16px}
+.sec-head{display:grid;gap:4px}
+.sec-head .k{font:500 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.sec-head h2{font:700 22px/1.2 var(--f-display);margin:0;letter-spacing:-.01em}
+.sec-head p{margin:0;color:var(--muted);font-size:14px}
+section.card.tsebo{border-color:color-mix(in srgb,var(--teal-chip) 45%,var(--line));background:linear-gradient(var(--teal-soft),var(--surface) 140px)}
+section.card.tsebo .k{color:var(--teal);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+section.card.tsebo .k img{height:18px;width:auto}
+section.card.tsebo .chips input:checked+span{background:var(--teal-chip);color:#06262a}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
+.f{display:grid;gap:7px;min-width:0;grid-column:span 2}
+.f.half{grid-column:span 1}
+.f>label,.f>.lbl{font-weight:600;font-size:14px}
+.f .req{color:var(--warn);margin-left:2px}
+input[type=text],input[type=email],input[type=tel],textarea{
+  width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;transition:border-color .2s ease-in-out}
+textarea{min-height:84px;resize:vertical}
+input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chips span{display:inline-block;padding:7px 13px;border-radius:999px;background:var(--chip);border:1px solid transparent;font-size:14px;user-select:none;transition:background .2s ease-in-out}
+.chips label:hover span{border-color:var(--line)}
+.chips input:checked+span{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.chips input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.f.invalid input,.f.invalid textarea{border-color:var(--warn)}
+.f .err{color:var(--warn);font-size:13px;font-weight:500}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.consent input{width:20px;height:20px;margin-top:1px;accent-color:var(--accent);flex:none}
+.consent a{color:var(--accent)}
+.consent.invalid{border-color:var(--warn)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.actions{position:sticky;bottom:0;z-index:5;background:var(--bg);border-top:1px solid var(--line);
+  padding-block:12px calc(12px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button{font:600 14px/1 var(--f-body);border-radius:999px;padding:13px 20px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);transition:transform .2s ease-in-out,background .2s ease-in-out}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button.primary:hover{transform:translateY(-1px)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button:disabled{opacity:.6;cursor:progress}
+.status{font-size:13px;color:var(--muted);flex:1 1 200px;min-width:0}
+.status.ok{color:var(--ok)} .status.bad{color:var(--warn)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 24px;display:grid;gap:10px}
+.panel h2{font:700 18px/1.2 var(--f-display);margin:0}
+.panel p{margin:0;color:var(--muted);font-size:14px}
+#copybox{width:100%;min-height:160px;font:12px/1.5 var(--f-mono)}
+.done{padding-block:56px;display:grid;gap:16px;max-width:620px}
+.done .tick{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font-size:28px}
+.done h2{font:700 clamp(26px,4vw,36px)/1.1 var(--f-display);margin:0;letter-spacing:-.02em}
+.done p{margin:0;color:var(--muted)}
+.done ol{margin:0;padding-left:20px;display:grid;gap:6px}
+footer.foot{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding-block:16px 8px;color:var(--muted);font-size:13px}
+footer.foot .lockup img{height:24px} footer.foot .lockup img.ts{height:20px} footer.foot .lockup .x{font-size:14px}
+footer.foot a{color:var(--muted)}
+@media (max-width:820px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  nav.rail{display:none}
+  .f.half{grid-column:span 2}
+  section.card{padding:18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="lockup" aria-label="Vuka Online and TseboNexus">
+      <img class="logo-light" src="assets/vuka-ink.png" alt="Vuka" width="128" height="40">
+      <img class="logo-dark" src="assets/vuka-white.png" alt="Vuka" width="128" height="40">
+      <span class="x" aria-hidden="true">×</span>
+      <img class="ts" src="assets/tsebonexus.png" alt="TseboNexus" width="153" height="34">
+    </div>
+    <span class="eyebrow">Client discovery brief</span>
+    <h1 id="headline">Let's get your business properly online</h1>
+    <p class="lede" id="lede">About 10 minutes. Most questions are tap-to-select. Your answers let us build a working prototype and a clear proposal, so the more specific you are, the closer our first draft will be. Skip anything you're unsure of.</p>
+  </header>
+
+  <div class="layout" id="formView">
+    <nav class="rail" id="rail" aria-label="Sections"></nav>
+    <div class="main">
+      <form id="brief" novalidate>
+        <div id="sections"></div>
+        <label class="consent" id="consentBox" for="consent">
+          <input type="checkbox" id="consent" name="consent">
+          <span>I agree that Vuka Online and its partner TseboNexus may use this information to prepare a prototype and proposal for my business, and contact me about it. See the <a href="https://vukaonline.co.za/privacy.html" target="_blank" rel="noopener">privacy policy</a>.</span>
+        </label>
+        <div class="hp" aria-hidden="true"><label for="botcheck">Leave this empty</label><input type="checkbox" id="botcheck" name="botcheck" tabindex="-1"></div>
+      </form>
+      <section class="panel" id="copyPanel" hidden>
+        <h2>Your brief as text</h2>
+        <p id="copyHint">Select all the text below and copy it, then send it to your Vuka or TseboNexus contact.</p>
+        <textarea id="copybox" readonly></textarea>
+      </section>
+      <div class="actions">
+        <button type="button" class="primary" id="sendBtn">Send my brief</button>
+        <button type="button" id="copyBtn">Copy as text</button>
+        <span class="status" id="status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="done" id="doneView" hidden tabindex="-1">
+    <div class="tick" aria-hidden="true">✓</div>
+    <h2>Thanks, <span id="doneName">we've got it</span>.</h2>
+    <p>Your brief is with the Vuka Online and TseboNexus team. Here's what happens next:</p>
+    <ol>
+      <li>We review your answers and may call or WhatsApp you with a few follow-up questions.</li>
+      <li>We build a prototype of your site or system so you can see it, not just read about it.</li>
+      <li>You get a clear proposal with pricing and timelines.</li>
+    </ol>
+    <p>Questions in the meantime? Email <strong>clayton@vukaonline.co.za</strong>.</p>
+  </section>
+
+  <footer class="foot">
+    <div class="lockup">
+      <img class="logo-light" src="assets/vuka-ink.png" alt="Vuka" width="77" height="24">
+      <img class="logo-dark" src="assets/vuka-white.png" alt="Vuka" width="77" height="24">
+      <span class="x" aria-hidden="true">×</span>
+      <img class="ts" src="assets/tsebonexus.png" alt="TseboNexus" width="90" height="20">
+    </div>
+    <span>Get online with Vuka. Stay secure with TseboNexus. · <a href="https://vukaonline.co.za/privacy.html" target="_blank" rel="noopener">Privacy</a></span>
+  </footer>
+</div>
+
+<script>
+// Web3Forms public submission key (same as vukaonline.co.za). Safe in client-side HTML.
+// Submissions are emailed to the address set on the Web3Forms account (clayton@vukaonline.co.za).
+const WEB3FORMS_KEY = "0bc7f5c1-8ff9-464c-9b2a-47b605f31caa";
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
+const SECTIONS = [
+  {id:"business", k:"01 · About you", title:"The business", hint:"Who you are and how to reach you.", fields:[
+    {id:"businessName", label:"Business name", type:"text", req:true, half:true, ph:"e.g. Mthembu Auto Repairs"},
+    {id:"industry", label:"Industry", type:"text", half:true, ph:"e.g. Auto repairs, catering, beauty salon"},
+    {id:"contactName", label:"Your name", type:"text", req:true, half:true},
+    {id:"role", label:"Your role", type:"text", half:true, ph:"e.g. Owner, Manager"},
+    {id:"email", label:"Email", type:"email", half:true},
+    {id:"phone", label:"Phone / WhatsApp", type:"tel", half:true, ph:"e.g. 082 123 4567"},
+    {id:"location", label:"Where do you operate?", type:"text", half:true, ph:"e.g. Soweto, Johannesburg + deliveries in Gauteng"},
+    {id:"teamSize", label:"Team size", type:"radio", half:true, opts:["Just me","2–5","6–20","21–50","50+"]},
+    {id:"oneLiner", label:"What do you do, in one or two sentences?", type:"textarea", ph:"What you sell or offer, and who your typical customer is."},
+    {id:"links", label:"Existing website or social pages", type:"textarea", ph:"Paste any links: website, Facebook, Instagram, Google listing, TikTok…", rows:2},
+  ]},
+  {id:"today", k:"02 · Today", title:"How things work right now", hint:"So we fix the real bottleneck, not just add a website.", fields:[
+    {id:"findYou", label:"How do customers find you today?", type:"chips", opts:["Word of mouth","Walk-ins","WhatsApp","Facebook","Instagram","TikTok","Google search / Maps","Existing website","Marketplaces (Takealot, Bob Shop…)","Flyers / signage"]},
+    {id:"tools", label:"What do you use to run the business?", type:"chips", opts:["Paper / notebook","Excel or Google Sheets","WhatsApp Business","Email (Gmail / Outlook)","Accounting software (Sage, Xero…)","Point of sale (Yoco, etc.)","Booking app","Nothing formal yet"]},
+    {id:"pain", label:"What's the biggest headache you'd like solved?", type:"textarea", ph:"e.g. We lose track of quotes on WhatsApp, customers can't see our prices, we can't take payments online…"},
+  ]},
+  {id:"need", k:"03 · The ask", title:"What you're looking for", hint:"Pick everything that applies. Not sure is a fine answer.", fields:[
+    {id:"solutions", label:"What would help?", type:"chips", opts:["Website","Online store","Booking / appointments","Customer database (CRM)","Quotes & invoicing","Custom app or client portal","Business email & domain","Google Business profile","Not sure yet, advise me"]},
+    {id:"goal", label:"The main goal in the next 6 months", type:"radio", opts:["More enquiries & leads","Sell online","Save admin time","Look more professional","Organise customer info","Something else"]},
+    {id:"features", label:"Must-haves", type:"textarea", ph:"Anything specific: price list, gallery, quote request form, WhatsApp button, staff logins, delivery areas, loyalty…"},
+    {id:"productCount", label:"Roughly how many products?", type:"radio", half:true, showIf:["solutions","Online store"], opts:["Under 20","20–100","100–500","500+"]},
+    {id:"payments", label:"How should customers pay?", type:"chips", half:true, showIf:["solutions","Online store","Booking / appointments","Quotes & invoicing"], opts:["Card online (PayFast, Yoco, Ozow…)","EFT","Cash on delivery / collection","SnapScan / Zapper"]},
+    {id:"delivery", label:"Delivery / collection", type:"chips", showIf:["solutions","Online store"], opts:["Courier nationwide","Own local delivery","Collection only","Digital products / services"]},
+  ]},
+  {id:"look", k:"04 · Look & content", title:"Brand and content", hint:"What we can work with for the prototype.", fields:[
+    {id:"logo", label:"Do you have a logo?", type:"radio", half:true, opts:["Yes","Rough version","No"]},
+    {id:"photos", label:"Photos of your work / products?", type:"radio", half:true, opts:["Yes, good ones","Some, phone quality","None yet"]},
+    {id:"copy", label:"Who writes the website text?", type:"radio", half:true, opts:["We'll provide it","Help us write it"]},
+    {id:"domain", label:"Do you own a domain (e.g. yourbusiness.co.za)?", type:"radio", half:true, opts:["Yes","No","Not sure"]},
+    {id:"feel", label:"Three words for how the brand should feel", type:"text", ph:"e.g. trustworthy, modern, local"},
+    {id:"likes", label:"Sites or competitors you like (and why)", type:"textarea", ph:"Links plus a line on what you like about each.", rows:2},
+  ]},
+  {id:"secure", k:"05 · Security baseline", tsebo:true, title:"Data and security", hint:"TseboNexus uses this to keep your new setup safe from day one.", fields:[
+    {id:"personalData", label:"What customer information do you keep?", type:"chips", opts:["Names & phone numbers","Email addresses","ID numbers","Addresses","Medical / sensitive info","Banking details","None"]},
+    {id:"popia", label:"Are you familiar with your POPIA responsibilities?", type:"radio", half:true, opts:["Yes, we're compliant","Somewhat","No"]},
+    {id:"backups", label:"Is business data backed up?", type:"radio", half:true, opts:["Yes, regularly","Sometimes","No / not sure"]},
+    {id:"incident", label:"Any past issues?", type:"chips", opts:["Hacked social / email account","Scam or fraud attempt","Lost data","Virus / ransomware","None that we know of"]},
+  ]},
+  {id:"practical", k:"06 · Practicalities", title:"Budget and timing", hint:"Ranges are fine. This helps us scope something realistic.", fields:[
+    {id:"budget", label:"Once-off build budget", type:"radio", opts:["Under R5,000","R5,000 – R15,000","R15,000 – R35,000","R35,000 – R75,000","R75,000+","Not sure yet"]},
+    {id:"monthly", label:"Monthly budget for hosting, support & security", type:"radio", opts:["Under R500","R500 – R1,500","R1,500 – R3,000","R3,000+","Not sure yet"]},
+    {id:"timeline", label:"When do you need it live?", type:"radio", half:true, opts:["ASAP (under 2 weeks)","Within a month","1–3 months","Flexible"]},
+    {id:"decider", label:"Who signs off?", type:"radio", half:true, opts:["Me","Me + partner(s)","Someone else"]},
+    {id:"maintain", label:"After launch, who updates the site?", type:"radio", opts:["We'll update it ourselves","Vuka manages it","A mix"]},
+    {id:"referrer", label:"Who referred you? (optional)", type:"text", half:true, ph:"Name of your TseboNexus or Vuka contact"},
+    {id:"other", label:"Anything else we should know?", type:"textarea", rows:2},
+  ]},
+];
+
+const $ = s => document.querySelector(s);
+const form = $("#brief");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function fieldHTML(f){
+  const req = f.req ? '<span class="req" aria-hidden="true">*</span>' : "";
+  const cls = "f" + (f.half ? " half" : "");
+  const show = f.showIf ? ` data-show="1"` : "";
+  if (f.type === "chips" || f.type === "radio"){
+    const t = f.type === "chips" ? "checkbox" : "radio";
+    const opts = f.opts.map((o,i) => `<label><input type="${t}" id="${f.id}-${i}" name="${f.id}" value="${esc(o)}"><span>${esc(o)}</span></label>`).join("");
+    return `<div class="${cls}" data-field="${f.id}"${show} role="group" aria-labelledby="${f.id}-l"><span class="lbl" id="${f.id}-l">${esc(f.label)}${req}</span><div class="chips">${opts}</div></div>`;
+  }
+  const ph = f.ph ? ` placeholder="${esc(f.ph)}"` : "";
+  const ac = {email:"email", phone:"tel", contactName:"name", businessName:"organization"}[f.id];
+  const ctl = f.type === "textarea"
+    ? `<textarea id="${f.id}" name="${f.id}" rows="${f.rows||3}"${ph}></textarea>`
+    : `<input type="${f.type}" id="${f.id}" name="${f.id}"${ph}${ac?` autocomplete="${ac}"`:""}${f.req?" required":""}>`;
+  return `<div class="${cls}" data-field="${f.id}"${show}><label for="${f.id}">${esc(f.label)}${req}</label>${ctl}</div>`;
+}
+$("#sections").outerHTML = SECTIONS.map(s => `<section class="card${s.tsebo ? " tsebo" : ""}" id="sec-${s.id}"><div class="sec-head"><span class="k">${esc(s.k)}${s.tsebo ? ' <img src="assets/tsebonexus.png" alt="by TseboNexus" width="81" height="18">' : ""}</span><h2>${esc(s.title)}</h2><p>${esc(s.hint)}</p></div><div class="grid">${s.fields.map(fieldHTML).join("")}</div></section>`).join("");
+$("#rail").innerHTML = SECTIONS.map(s => `<a href="#sec-${s.id}" data-sec="${s.id}"><span>${esc(s.title)}</span><span class="n"></span></a>`).join("") +
+  `<div class="rail-total"><span id="totalTxt"></span><div class="bar"><i id="totalBar"></i></div></div>`;
+
+const ALL = SECTIONS.flatMap(s => s.fields);
+function getValues(){
+  const v = {};
+  for (const f of ALL){
+    if (f.type === "chips") v[f.id] = [...form.querySelectorAll(`input[name="${f.id}"]:checked`)].map(i => i.value);
+    else if (f.type === "radio") v[f.id] = form.querySelector(`input[name="${f.id}"]:checked`)?.value || "";
+    else v[f.id] = form.elements[f.id].value.trim();
+  }
+  return v;
+}
+function setValues(v){
+  for (const f of ALL){
+    const val = v?.[f.id];
+    if (f.type === "chips" || f.type === "radio"){
+      const set = new Set(Array.isArray(val) ? val : val ? [val] : []);
+      form.querySelectorAll(`input[name="${f.id}"]`).forEach(i => i.checked = set.has(i.value));
+    } else form.elements[f.id].value = val || "";
+  }
+  refresh();
+}
+const filled = x => Array.isArray(x) ? x.length > 0 : !!x;
+function visible(f, v){
+  if (!f.showIf) return true;
+  const [dep, ...any] = f.showIf; return (v[dep]||[]).some(x => any.includes(x));
+}
+function refresh(){
+  const v = getValues();
+  form.querySelectorAll("[data-show]").forEach(el => {
+    const f = ALL.find(x => x.id === el.dataset.field); el.hidden = !visible(f, v);
+  });
+  let tot = 0, done = 0;
+  for (const s of SECTIONS){
+    const fs = s.fields.filter(f => visible(f, v));
+    const d = fs.filter(f => filled(v[f.id])).length;
+    tot += fs.length; done += d;
+    const a = document.querySelector(`#rail a[data-sec="${s.id}"]`);
+    a.querySelector(".n").textContent = `${d}/${fs.length}`;
+    a.classList.toggle("done", d === fs.length);
+  }
+  $("#totalTxt").textContent = `${done} of ${tot} answered`;
+  $("#totalBar").style.width = (tot ? done/tot*100 : 0) + "%";
+}
+
+// Unsent draft kept in this browser only, so a lead can come back later
+const DRAFT = "vuka-tsebo-brief-draft";
+let draftTimer;
+form.addEventListener("input", () => {
+  refresh(); clearTimeout(draftTimer);
+  draftTimer = setTimeout(() => { try{ localStorage.setItem(DRAFT, JSON.stringify(getValues())); }catch(e){} }, 400);
+});
+form.addEventListener("submit", e => e.preventDefault());
+try{ const d = JSON.parse(localStorage.getItem(DRAFT) || "null"); if (d) setValues(d); }catch(e){}
+// Pre-fill the referrer from the link, e.g. ?ref=Thabo
+try{ const ref = new URLSearchParams(location.search).get("ref"); if (ref && !form.elements.referrer.value) form.elements.referrer.value = ref.slice(0,80); }catch(e){}
+refresh();
+
+function setStatus(msg, kind){ const s = $("#status"); s.textContent = msg; s.className = "status" + (kind ? " "+kind : ""); }
+function clearErrors(){
+  form.querySelectorAll(".f.invalid").forEach(el => { el.classList.remove("invalid"); el.querySelector(".err")?.remove(); });
+  $("#consentBox").classList.remove("invalid");
+}
+function validate(v, needConsent){
+  clearErrors();
+  const bad = [];
+  const mark = (id, msg) => { const el = form.querySelector(`[data-field="${id}"]`); el.classList.add("invalid");
+    el.insertAdjacentHTML("beforeend", `<span class="err">${esc(msg)}</span>`); bad.push(el); };
+  if (!v.businessName) mark("businessName", "Add the business name.");
+  if (!v.contactName) mark("contactName", "Add your name.");
+  if (!v.email && !v.phone) mark("phone", "Add an email or a phone number so we can follow up.");
+  else if (v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) mark("email", "This email looks incomplete, e.g. name@business.co.za");
+  if (needConsent && !$("#consent").checked){ $("#consentBox").classList.add("invalid"); bad.push($("#consentBox")); }
+  if (bad.length){ bad[0].scrollIntoView({block:"center"}); setStatus(bad.length === 1 && bad[0].id === "consentBox" ? "Tick the consent box so we can use your answers." : "A few details are missing. They're highlighted above.", "bad"); }
+  return !bad.length;
+}
+function asText(v){
+  const lines = ["VUKA × TSEBONEXUS · CLIENT DISCOVERY BRIEF", "Date: " + new Date().toLocaleDateString("en-ZA", {day:"numeric", month:"long", year:"numeric"}), ""];
+  for (const s of SECTIONS){
+    const fs = s.fields.filter(f => visible(f, v) && filled(v[f.id]));
+    if (!fs.length) continue;
+    lines.push("== " + s.title.toUpperCase() + " ==");
+    for (const f of fs) lines.push(`${f.label}: ${Array.isArray(v[f.id]) ? v[f.id].join(", ") : v[f.id]}`);
+    lines.push("");
+  }
+  return lines.join("\n").trim();
+}
+
+$("#sendBtn").addEventListener("click", async () => {
+  if ($("#botcheck").checked) return;
+  const v = getValues(); if (!validate(v, true)) return;
+  const btn = $("#sendBtn"); btn.disabled = true; btn.textContent = "Sending…"; setStatus("", "");
+  // Labelled fields so the email reads cleanly, in form order
+  const payload = {
+    access_key: WEB3FORMS_KEY,
+    subject: `New discovery brief: ${v.businessName}`,
+    from_name: "Vuka × TseboNexus Discovery",
+    botcheck: false,
+  };
+  if (v.email) payload.replyto = v.email;
+  for (const s of SECTIONS) for (const f of s.fields){
+    if (!visible(f, v) || !filled(v[f.id])) continue;
+    payload[f.label] = Array.isArray(v[f.id]) ? v[f.id].join(", ") : v[f.id];
+  }
+  payload["Consent"] = "Agreed to Vuka Online and TseboNexus using this information for a prototype and proposal";
+  payload["Full brief (plain text)"] = asText(v);
+  try{
+    const res = await fetch(WEB3FORMS_ENDPOINT, { method:"POST", headers:{"Content-Type":"application/json", Accept:"application/json"}, body: JSON.stringify(payload) });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data.success === false) throw new Error(data.message || "Submission rejected");
+    try{ localStorage.removeItem(DRAFT); }catch(e){}
+    $("#doneName").textContent = v.contactName.split(" ")[0] || "we've got it";
+    $("#formView").hidden = true; $("#headline").hidden = true; $("#lede").hidden = true;
+    $("#doneView").hidden = false; $("#doneView").focus(); window.scrollTo(0, 0);
+  }catch(e){
+    setStatus("Your brief didn't send. Check your connection and try again, or use Copy as text and email it to clayton@vukaonline.co.za.", "bad");
+  }finally{ btn.disabled = false; btn.textContent = "Send my brief"; }
+});
+
+$("#copyBtn").addEventListener("click", () => {
+  const v = getValues(); if (!validate(v, false)) return;
+  const text = asText(v);
+  const fallback = () => { $("#copyPanel").hidden = false; const b = $("#copybox"); b.value = text; b.focus(); b.select();
+    setStatus("Select the text below and copy it.", ""); };
+  try{
+    navigator.clipboard.writeText(text).then(() => { $("#copyPanel").hidden = true;
+      setStatus("Copied. You can paste it into an email or WhatsApp.", "ok"); }, fallback);
+  }catch(e){ fallback(); }
+});
+</script>
+</body>
+</html>
