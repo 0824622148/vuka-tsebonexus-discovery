@@ -179,8 +179,10 @@ footer.foot a{color:var(--muted)}
 
 <script>
 // Web3Forms public submission key (same as vukaonline.co.za). Safe in client-side HTML.
-// Submissions are emailed to the address set on the Web3Forms account (clayton@vukaonline.co.za).
+// Submissions are emailed to the address set on the Web3Forms account (clayton@vukaonline.co.za),
+// with a copy to TseboNexus via ccemail (a Web3Forms Pro feature; must be a verified linked email).
 const WEB3FORMS_KEY = "0bc7f5c1-8ff9-464c-9b2a-47b605f31caa";
+const CC_EMAILS = "thabo.lebina@tsebonexus.co.za";
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
 const SECTIONS = [
@@ -353,6 +355,7 @@ $("#sendBtn").addEventListener("click", async () => {
     access_key: WEB3FORMS_KEY,
     subject: `New discovery brief: ${v.businessName}`,
     from_name: "Vuka × TseboNexus Discovery",
+    ccemail: CC_EMAILS,
     botcheck: false,
   };
   if (v.email) payload.replyto = v.email;
