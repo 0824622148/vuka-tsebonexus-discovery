@@ -135,7 +135,7 @@ footer.foot a{color:var(--muted)}
         <div id="sections"></div>
         <label class="consent" id="consentBox" for="consent">
           <input type="checkbox" id="consent" name="consent">
-          <span>I agree that Vuka Online and its partner TseboNexus may use this information to prepare a prototype and proposal for my business, and contact me about it. See the <a href="https://vukaonline.co.za/privacy.html" target="_blank" rel="noopener">privacy policy</a>.</span>
+          <span>I agree that TseboNexus and its associate partners may use this information to prepare a prototype and proposal for my business, and contact me about it. See the <a href="https://vukaonline.co.za/privacy.html" target="_blank" rel="noopener">privacy policy</a>.</span>
         </label>
         <div class="hp" aria-hidden="true"><label for="botcheck">Leave this empty</label><input type="checkbox" id="botcheck" name="botcheck" tabindex="-1"></div>
       </form>
@@ -366,7 +366,7 @@ $("#sendBtn").addEventListener("click", async () => {
     if (!visible(f, v) || !filled(v[f.id])) continue;
     payload[f.label] = Array.isArray(v[f.id]) ? v[f.id].join(", ") : v[f.id];
   }
-  payload["Consent"] = "Agreed to Vuka Online and TseboNexus using this information for a prototype and proposal";
+  payload["Consent"] = "Agreed to TseboNexus and its associate partners using this information for a prototype and proposal";
   payload["Full brief (plain text)"] = asText(v);
   try{
     // Send to every recipient; the brief counts as delivered if at least one copy got through
