@@ -3,28 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Vuka × TseboNexus Discovery Brief</title>
+<title>TseboNexus Discovery Brief</title>
 <meta name="description" content="Tell Vuka Online and TseboNexus about your business so we can prepare a prototype and proposal.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0f241d">
-<link rel="icon" href="assets/vuka-ink.png">
+<meta name="theme-color" content="#081B3A">
+<link rel="icon" href="assets/tsebonexus.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
 <style>
 /* Layout: a single form column with a sticky section rail on wide screens; chips do most of the work so the brief fills fast. */
-/* Brand: Vuka deep green + green dot; TseboNexus teal (#3FC1AE) for the security section. No red tones (TseboNexus brand rule). */
+/* Brand: TseboNexus navy #081B3A + teal #6FD8DF (same as tsebo-nexus.co.za); Vuka appears only in the footer.
+   --accent is the darker teal used for text, rules and focus; --fill/--fill-ink are the bright teal surfaces.
+   No red tones (TseboNexus brand rule). */
 :root{
   color-scheme:light;
-  --bg:#f4f7f5; --surface:#ffffff; --ink:#0f241d; --muted:#556860; --line:#dbe4df;
-  --accent:#16784d; --accent-ink:#ffffff; --teal:#1d8f80; --teal-chip:#3FC1AE; --teal-soft:#e4f7f4; --chip:#eaf1ed; --warn:#9a5b00; --ok:#16784d;
-  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --f-body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --bg:#F8FAFC; --surface:#ffffff; --ink:#081B3A; --muted:#41506A; --line:#DCE3EC;
+  --accent:#1F7F87; --fill:#6FD8DF; --fill-ink:#081B3A; --teal:#1F7F87; --teal-chip:#6FD8DF; --teal-soft:#EAF8F9; --chip:#EDF2F8; --warn:#9a5b00; --ok:#1F7F87;
+  --f-display:"Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark){:root{
-  --bg:#0a1a15; --surface:#10251e; --ink:#e8f2ed; --muted:#9db3a9; --line:#22392f;
-  --accent:#31D98C; --accent-ink:#0C231C; --teal:#6FE3D3; --teal-chip:#3FC1AE; --teal-soft:#0f2f33; --chip:#1a3229; --warn:#f0b35a; --ok:#31D98C; color-scheme:dark}
+  --bg:#050F24; --surface:#081B3A; --ink:#F8FAFC; --muted:#A3B1C6; --line:#1C3254;
+  --accent:#6FD8DF; --fill:#6FD8DF; --fill-ink:#081B3A; --teal:#6FD8DF; --teal-chip:#6FD8DF; --teal-soft:#0B2A44; --chip:#11284A; --warn:#f0b35a; --ok:#6FD8DF; color-scheme:dark}
 }
 .lockup img.logo-dark{display:none}
 @media (prefers-color-scheme: dark){.lockup img.logo-light{display:none} .lockup img.logo-dark{display:block}}
@@ -38,9 +40,9 @@ img{max-width:100%}
 header.top{padding-block:40px 28px;display:grid;gap:14px;max-width:680px}
 .lockup{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-bottom:6px}
 .lockup img{height:40px;width:auto;display:block}
-.lockup img.ts{height:34px}
+.lockup img.ts{height:40px}
 .lockup .x{font:500 20px/1 var(--f-body);color:var(--muted)}
-.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.eyebrow{font:600 12px/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
 h1{font:700 clamp(30px,5vw,46px)/1.05 var(--f-display);letter-spacing:-.02em;margin:0;text-wrap:balance}
 .lede{color:var(--muted);margin:0;max-width:62ch}
 .layout{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;align-items:start}
@@ -51,18 +53,17 @@ nav.rail a .n{font:500 11px/1.9 var(--f-mono);font-variant-numeric:tabular-nums}
 nav.rail a.done .n{color:var(--accent)}
 .rail-total{margin-top:12px;padding:10px;border-top:1px solid var(--line);font:500 12px/1.4 var(--f-mono);color:var(--muted)}
 .bar{height:4px;background:var(--line);border-radius:4px;margin-top:6px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s ease-in-out}
+.bar i{display:block;height:100%;background:var(--fill);width:0;transition:width .3s ease-in-out}
 .main{display:grid;gap:20px;min-width:0}
 form{display:grid;gap:20px;min-width:0}
 section.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:18px;scroll-margin-top:16px}
 .sec-head{display:grid;gap:4px}
-.sec-head .k{font:500 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.sec-head .k{font:600 11px/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
 .sec-head h2{font:700 22px/1.2 var(--f-display);margin:0;letter-spacing:-.01em}
 .sec-head p{margin:0;color:var(--muted);font-size:14px}
 section.card.tsebo{border-color:color-mix(in srgb,var(--teal-chip) 45%,var(--line));background:linear-gradient(var(--teal-soft),var(--surface) 140px)}
 section.card.tsebo .k{color:var(--teal);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-section.card.tsebo .k img{height:18px;width:auto}
-section.card.tsebo .chips input:checked+span{background:var(--teal-chip);color:#06262a}
+section.card.tsebo .chips input:checked+span{background:var(--teal-chip);color:var(--fill-ink)}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
 .f{display:grid;gap:7px;min-width:0;grid-column:span 2}
 .f.half{grid-column:span 1}
@@ -77,7 +78,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outli
 .chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
 .chips span{display:inline-block;padding:7px 13px;border-radius:999px;background:var(--chip);border:1px solid transparent;font-size:14px;user-select:none;transition:background .2s ease-in-out}
 .chips label:hover span{border-color:var(--line)}
-.chips input:checked+span{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.chips input:checked+span{background:var(--fill);color:var(--fill-ink);font-weight:600}
 .chips input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
 .f.invalid input,.f.invalid textarea{border-color:var(--warn)}
 .f .err{color:var(--warn);font-size:13px;font-weight:500}
@@ -89,7 +90,7 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outli
 .actions{position:sticky;bottom:0;z-index:5;background:var(--bg);border-top:1px solid var(--line);
   padding-block:12px calc(12px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 button{font:600 14px/1 var(--f-body);border-radius:999px;padding:13px 20px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);transition:transform .2s ease-in-out,background .2s ease-in-out}
-button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button.primary{background:var(--fill);color:var(--fill-ink);border-color:var(--fill)}
 button.primary:hover{transform:translateY(-1px)}
 button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 button:disabled{opacity:.6;cursor:progress}
@@ -100,7 +101,7 @@ button:disabled{opacity:.6;cursor:progress}
 .panel p{margin:0;color:var(--muted);font-size:14px}
 #copybox{width:100%;min-height:160px;font:12px/1.5 var(--f-mono)}
 .done{padding-block:56px;display:grid;gap:16px;max-width:620px}
-.done .tick{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font-size:28px}
+.done .tick{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--fill);color:var(--fill-ink);font-size:28px}
 .done h2{font:700 clamp(26px,4vw,36px)/1.1 var(--f-display);margin:0;letter-spacing:-.02em}
 .done p{margin:0;color:var(--muted)}
 .done ol{margin:0;padding-left:20px;display:grid;gap:6px}
@@ -119,14 +120,11 @@ footer.foot a{color:var(--muted)}
 <body>
 <div class="wrap">
   <header class="top">
-    <div class="lockup" aria-label="Vuka Online and TseboNexus">
-      <img class="logo-light" src="assets/vuka-ink.png" alt="Vuka" width="128" height="40">
-      <img class="logo-dark" src="assets/vuka-white.png" alt="Vuka" width="128" height="40">
-      <span class="x" aria-hidden="true">×</span>
-      <img class="ts" src="assets/tsebonexus.png" alt="TseboNexus" width="153" height="34">
+    <div class="lockup">
+      <img class="ts" src="assets/tsebonexus.png" alt="TseboNexus" width="191" height="40">
     </div>
     <span class="eyebrow">Client discovery brief</span>
-    <h1 id="headline">Let's get your business properly online</h1>
+    <h1 id="headline">Let's understand your business and its technology needs</h1>
     <p class="lede" id="lede">About 10 minutes. Most questions are tap-to-select. Your answers let us build a working prototype and a clear proposal, so the more specific you are, the closer our first draft will be. Skip anything you're unsure of.</p>
   </header>
 
@@ -263,7 +261,7 @@ function fieldHTML(f){
     : `<input type="${f.type}" id="${f.id}" name="${f.id}"${ph}${ac?` autocomplete="${ac}"`:""}${f.req?" required":""}>`;
   return `<div class="${cls}" data-field="${f.id}"${show}><label for="${f.id}">${esc(f.label)}${req}</label>${ctl}</div>`;
 }
-$("#sections").outerHTML = SECTIONS.map(s => `<section class="card${s.tsebo ? " tsebo" : ""}" id="sec-${s.id}"><div class="sec-head"><span class="k">${esc(s.k)}${s.tsebo ? ' <img src="assets/tsebonexus.png" alt="by TseboNexus" width="81" height="18">' : ""}</span><h2>${esc(s.title)}</h2><p>${esc(s.hint)}</p></div><div class="grid">${s.fields.map(fieldHTML).join("")}</div></section>`).join("");
+$("#sections").outerHTML = SECTIONS.map(s => `<section class="card${s.tsebo ? " tsebo" : ""}" id="sec-${s.id}"><div class="sec-head"><span class="k">${esc(s.k)}</span><h2>${esc(s.title)}</h2><p>${esc(s.hint)}</p></div><div class="grid">${s.fields.map(fieldHTML).join("")}</div></section>`).join("");
 $("#rail").innerHTML = SECTIONS.map(s => `<a href="#sec-${s.id}" data-sec="${s.id}"><span>${esc(s.title)}</span><span class="n"></span></a>`).join("") +
   `<div class="rail-total"><span id="totalTxt"></span><div class="bar"><i id="totalBar"></i></div></div>`;
 
