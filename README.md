@@ -1,13 +1,13 @@
-# Vuka × TseboNexus Discovery Brief
+# TseboNexus Discovery Brief
 
-Client intake form for leads from the TseboNexus partnership. A lead fills it in, and we use the answers to build a prototype and proposal.
+TseboNexus-owned client intake form. A lead fills it in, and we use the answers to build a prototype and proposal.
 
 | | |
 |---|---|
 | Live URL | <https://discovery.tsebo-nexus.co.za> |
 | Hosting | GitHub Pages (static HTML, no build step) |
 | DNS | GoDaddy (tsebo-nexus.co.za): `CNAME discovery → 0824622148.github.io` |
-| Submissions | Web3Forms, sent once per key in `WEB3FORMS_KEYS`: clayton@vukaonline.co.za (main-site key) and thabo.lebina@tsebonexus.co.za (second key) |
+| Submissions | Web3Forms, sent once per key in `WEB3FORMS_KEYS`. Currently one key, shared with tsebo-nexus.co.za, delivering to thabo.lebina@tsebonexus.co.za. The recipient is set per key in the Web3Forms dashboard (form settings), not in this code. |
 
 Web3Forms is on the free plan: `ccemail` (copying a second address) is Pro-only and makes submissions fail with HTTP 400 if included.
 
@@ -25,7 +25,8 @@ Nothing is stored on this site. The lead's unsent draft is kept only in their ow
 ## Files
 
 - `index.html`: the whole form (questions are in the `SECTIONS` array near the top of the script)
-- `assets/`: Vuka wordmarks (ink and white) and the TseboNexus logo
+- `assets/`: TseboNexus logo (header and footer)
+- `favicon*`, `apple-touch-icon.png`: TseboNexus symbol, same set as tsebo-nexus.co.za
 - `CNAME`: binds the subdomain
 
 ## Changing a question
